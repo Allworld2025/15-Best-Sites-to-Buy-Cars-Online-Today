@@ -1,0 +1,201 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #1e293b;
+    background-image: url('https://www.transparenttextures.com/patterns/leather.png');
+    background-attachment: fixed;
+    background-size: cover;
+    color: #e2e8f0;
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+.fade-in {
+    animation: fadeIn 1.2s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.header-bg {
+    background: linear-gradient(to right, #1e3a8a, #3b82f6);
+    color: #f1f5f9;
+    transform: translateY(-20px);
+    opacity: 0;
+    animation: slideIn 0.8s ease-out 0.3s forwards;
+    padding: 2rem 1rem;
+}
+
+@keyframes slideIn {
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.card {
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #1e3a8a;
+    border: 1px solid #334155;
+    margin: 0.5rem;
+    opacity: 0;
+    animation: scaleUpCard 0.5s ease-out forwards;
+    animation-delay: calc(0.1s * var(--card-index));
+}
+
+@keyframes scaleUpCard {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(234, 179, 8, 0.3);
+}
+
+.card h2 {
+    transition: color 0.4s ease-in-out, text-shadow 0.4s ease-in-out;
+}
+
+.card:hover h2 {
+    color: #eab308;
+    text-shadow: 0 0 8px rgba(234, 179, 8, 0.5);
+}
+
+.shimmer-link {
+    position: relative;
+    transition: color 0.4s ease-in-out;
+}
+
+.shimmer-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #eab308;
+    transition: width 0.4s ease-in-out;
+}
+
+.shimmer-link:hover::after {
+    width: 100%;
+}
+
+.shimmer-link:hover {
+    color: #f1f5f9;
+    animation: shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% { text-shadow: 0 0 5px rgba(234, 179, 8, 0.5); }
+    50% { text-shadow: 0 0 10px rgba(234, 179, 8, 0.8); }
+}
+
+.text-ivory {
+    color: #f1f5f9;
+}
+
+.text-gold {
+    color: #eab308;
+}
+
+.bg-navy {
+    background-color: #1e3a8a;
+}
+
+.bg-navy:hover {
+    background-color: #2d4b9b;
+}
+
+@media (max-width: 768px) {
+    .header-bg {
+        background: linear-gradient(to bottom, #1e3a8a, #3b82f6);
+        padding: 1.5rem 0.5rem;
+    }
+    .header-bg h1 {
+        font-size: 2rem;
+        line-height: 2.5rem;
+    }
+    .header-bg p {
+        font-size: 1rem;
+        line-height: 1.4rem;
+    }
+    .card {
+        margin: 0.5rem;
+        padding: 1rem;
+    }
+    .card h2 {
+        font-size: 1.25rem;
+    }
+    .card p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+    .container {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    section.mb-12 p {
+        font-size: 0.95rem;
+    }
+    section.mt-12 h2 {
+        font-size: 1.75rem;
+    }
+    section.mt-12 p, section.mt-12 ul li {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-bg {
+        padding: 1rem 0.5rem;
+    }
+    .header-bg h1 {
+        font-size: 1.75rem;
+        line-height: 2rem;
+    }
+    .header-bg p {
+        font-size: 0.9rem;
+        line-height: 1.3rem;
+    }
+    .card {
+        margin: 0.3rem;
+        padding: 0.75rem;
+    }
+    .card h2 {
+        font-size: 1.1rem;
+    }
+    .card p {
+        font-size: 0.85rem;
+        line-height: 1.3;
+    }
+    .container {
+        padding-left: 0.3rem;
+        padding-right: 0.3rem;
+    }
+    section.mb-12 p {
+        font-size: 0.9rem;
+    }
+    section.mt-12 h2 {
+        font-size: 1.5rem;
+    }
+    section.mt-12 p, section.mt-12 ul li {
+        font-size: 0.9rem;
+    }
+    footer {
+        padding: 1rem;
+        font-size: 0.85rem;
+    }
+}
+
+footer {
+    transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+footer:hover {
+    background-color: #2d4b9b;
+    box-shadow: 0 0 12px rgba(234, 179, 8, 0.4);
+}
